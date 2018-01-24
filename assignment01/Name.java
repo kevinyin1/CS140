@@ -14,11 +14,11 @@ public class Name {
 	}
 
 	public void befriend(Name n) {
-		friends += n.getName() + " ";
+		friends += " " + n.getName();
 	}
 	
 	public void unfriend(Name n) {
-		friends = friends.replace(n.getName() + " ", "");
+		friends = friends.replace(" " + n.getName(), "");
 	}
 
 	public String getFriendNames() {

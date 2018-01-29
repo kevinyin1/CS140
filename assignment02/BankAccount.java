@@ -1,4 +1,4 @@
-package assignment01;
+package assignment02;
 /**
    A bank account has a balance that can be changed by 
    deposits and withdrawals.

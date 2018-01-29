@@ -7,7 +7,7 @@ public class Driver4 {
 		Name alex = new Name("Alex");
 		n.befriend(new Name("Alice"));
 		n.befriend(alex);
-		n.befriend(new Name("Michael"
+		n.befriend(new Name("Michael"));
 		System.out.println("Number of Friends: " 
 + n.getFriendCount()); // expected output: 3 
 		System.out.println("List of Friends: " + n.getFriendNames());

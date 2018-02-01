@@ -33,6 +33,6 @@ public class SumTest {
 	}
 	
 	public static void main(String[] args) {
-		new ScanEx().experiment(new File(args[0]));
+		new SumTest().experiment(new File(args[0]));
 	}
 }

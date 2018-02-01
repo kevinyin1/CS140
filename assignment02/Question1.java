@@ -5,7 +5,7 @@ public class Question1 {
 	public static double averageBankBalance(BankAccount1[] accs) {
 		int totalBalance = 0;
 		for(BankAccount1 account: accs)
-			totalBalance += account.getBalance();
+		totalBalance += account.getBalance();
 		return totalBalance / accs.length;
 	}	
 

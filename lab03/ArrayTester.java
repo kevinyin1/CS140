@@ -7,9 +7,9 @@ public class ArrayTester {
 	public static void main(String[] args) {
 		if (args.length == 1) {
 			ArrayFromFile array_from_file = new ArrayFromFile(args[0]);
-			System.out.println("Expection output: [20, 8, 13, 46, 7]");
+			System.out.println("Expected output: [20, 8, 13, 46, 7]");
 			System.out.println(array_from_file);
-			System.out.println("Expection output: [20, 8, 46]");
+			System.out.println("Expected output: [20, 8, 46]");
 			array_from_file.removeOddElements();
 			System.out.println(array_from_file);
 		

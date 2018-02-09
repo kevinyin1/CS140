@@ -15,7 +15,6 @@ public class Roster {
 			if(classRoster.get(i).getName().equals(s.getName())) classRoster.remove(i);
 	}
 
-	@Override
 	public String toString() {
 		String return_string = "";
 		for(int i = 0; i < classRoster.size(); i++) {

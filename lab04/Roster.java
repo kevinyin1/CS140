@@ -11,19 +11,19 @@ public class Roster {
 	}
 
 	public void dropStudent(Student s) {
-		for(Student stu: classRoster)
-			if(stu.getName().equals(s.getName())) classRoster.remove(stu);
+		for(int i = 0; i < classRoster.size(); i++)		
+			if(classRoster.get(i).getName().equals(s.getName())) classRoster.remove(i);
 	}
 
 	@Override
 	public String toString() {
-		String return_sting = "";
+		String return_string = "";
 		for(int i = 0; i < classRoster.size(); i++) {
 			if(i == classRoster.size() - 1) {
-				return_string += classRoster.get(i);
+				return_string += classRoster.get(i).getName();
 				continue;
 			}
-			return_string += classRoster.get(i) + ", ";
+			return_string += classRoster.get(i).getName() + ", ";
 		}
 		return "[" + return_string + "]";
 	}
@@ -34,7 +34,7 @@ public class Roster {
 
 	public void sortByID() {
 		for(int i = 0; i < classRoster.size(); i++)
-			for(int index = 1; index < classRoster.size() - i; i++)
+			for(int index = 1; index < classRoster.size() - i; index++)
 				if(classRoster.get(index-1).getID() > classRoster.get(index).getID()){
 					Student temp = classRoster.get(index-1);
 					classRoster.set(index-1,classRoster.get(index));

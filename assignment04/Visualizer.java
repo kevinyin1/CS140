@@ -34,11 +34,13 @@ public class Visualizer {
 
 	public static void showElev(Elevator e) {
 		for(int i = e.getNumFloors() - 1; i >= 0; i--){
+			Line line = e.getLines().get(i);
+			String s = (line != null) ? line.getLine().toString() : "";
 			if(i == e.getCurrentFloor()){
-				System.out.println(e.getFloorName(i) + " >\t\t" + e.getNumOccupants());
+				System.out.println(e.getFloorName(i) + " >\t\t" + e.getNumOccupants() + "\t\t " + s);
 				continue;
 			}
-			System.out.println(e.getFloorName(i) + "\t\t0");
+			System.out.println(e.getFloorName(i) + "\t\t0" + "\t\t" + s);
 		}
 	}
 

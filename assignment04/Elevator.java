@@ -27,7 +27,7 @@ public class Elevator {
 		if(index == groundFloor) return "G";
 		else if(index < groundFloor)
 			return "B" + (groundFloor - index);
-		else return "" + (index - groundFloor);	
+		else return "" + (index - groundFloor + 1);	
 	}
 	/**
 	Converts a floor name to a floor number
@@ -38,7 +38,7 @@ public class Elevator {
 		if(floor.equals("G")) return groundFloor;
 		else if(floor.startsWith("B")) 
 			return groundFloor - Integer.parseInt(floor.substring(1));
-		else return Integer.parseInt(floor) + groundFloor;
+		else return Integer.parseInt(floor) + groundFloor - 1;
 	}
 
 	public boolean addOccupants(Passenger p) {

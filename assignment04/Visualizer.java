@@ -22,6 +22,12 @@ public class Visualizer {
 		line.add(new Passenger("B3", e));
 		line.add(new Passenger("B3", e));
 		line.add(new Passenger("B3", e));
+		Line l2 = new Line("5", e);
+		List<Passenger> line2 = l2.getLine();
+		line2.add(new Passenger("3", e));
+		line2.add(new Passenger("B2", e));
+		line2.add(new Passenger("B4", e));
+
 		showElev(e);
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 		e.getLines().get(e.getCurrentFloor()).loadElevator();

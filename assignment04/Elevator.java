@@ -33,7 +33,7 @@ public class Elevator {
 	public int getFloorIndex(String floor) {
 		if(floor.equals("G")) return groundFloor;
 		else if(floor.startsWith("B")) 
-			return Integer.parseInt(floor.substring(1)) + (groundFloor -Integer.parseInt(floor.substring(1)));
+			return groundFloor - Integer.parseInt(floor.substring(1));
 		else return Integer.parseInt(floor) + groundFloor;
 	}
 
@@ -62,11 +62,11 @@ public class Elevator {
 		}
 		Iterator iter = occupants.iterator();
 		while(iter.hasNext()){
-			Passenger p = (Passenger) iter.next();
-			if(currentFloor == getFloorIndex(p.getDestinationFloor())) iter.remove();
+			Object p = iter.next();
+			if(p != null && currentFloor == getFloorIndex(((Passenger) p).getDestinationFloor())) iter.remove();
 		}
 		for(Line l: lines)
-			if(l.getFloor().equals(getFloorName(currentFloor))) 
+			if(l != null && l.getFloor().equals(getFloorName(currentFloor))) 
 				if(l.getLine() != null)
 					l.loadElevator();
 	}

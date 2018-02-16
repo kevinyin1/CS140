@@ -29,7 +29,11 @@ public class Elevator {
 			return "B" + (groundFloor - index);
 		else return "" + (index - groundFloor);	
 	}
-
+	/**
+	Converts a floor name to a floor number
+	@param floor convert to a number
+	@return returns a number that corresponds to the given floor param
+	*/
 	public int getFloorIndex(String floor) {
 		if(floor.equals("G")) return groundFloor;
 		else if(floor.startsWith("B")) 
@@ -48,7 +52,9 @@ public class Elevator {
 	public void addLine(String flr, Line ln) {
 		lines.set(getFloorIndex(flr), ln);
 	}
-
+	/**
+	Moves the elevator up or down by incrementing the floor number by 1 or -1
+	*/
 	public void move() {
 		if(currentDir == Direction.UP && currentFloor < numFloors - 1) currentFloor++;
 		if(currentDir == Direction.UP && currentFloor == numFloors - 1){

@@ -1,0 +1,13 @@
+package lab06;
+
+public class BankAccount {
+	private double balance;
+	private int idNum;
+	static int numAccounts = 0;
+
+	public BankAccount(double balance) {
+		this.balance = balance;
+		idNum = ++numAccounts;
+	}
+
+}

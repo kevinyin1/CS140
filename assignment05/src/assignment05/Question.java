@@ -1,4 +1,5 @@
 package assignment05;
+import java.util.List;
 import java.util.Scanner;
 /**
  * A question with a text and an answer.
@@ -43,6 +44,7 @@ public class Question {
 	}
 	/**
 	 * Presents a question to the user and checks the response.
+	 * @return 
 	 */
 	public void presentQuestion() {
 		display();
@@ -50,7 +52,6 @@ public class Question {
 		Scanner in = new Scanner(System.in);
 		String response = in.nextLine();
 		System.out.println(checkAnswer(response));
-		in.close(); //closed the scanner
 	}
 
 }

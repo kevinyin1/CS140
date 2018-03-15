@@ -49,7 +49,6 @@ public class MultichoiceQuestion extends Question {
 		return (correct == correctChoices.size() && incorrect == 0); 
 	}
 	
-	
 	@Override
 	public void presentQuestion() {
 		display();

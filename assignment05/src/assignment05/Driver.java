@@ -8,6 +8,15 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
+		Parent p = new Parent();
+		p.setpName("Tom");
+		p.print();
+		p = new Child(); 
+		p.setpName("Dick"); 
+		((Child)p).setcName("Harry"); 
+		p.print(); 
+		
+		
 		Pizza order = new MediumCheesePizza();
 		System.out.println(order.getDescription() + " " + order.getCost());
 		order = new Mushroom(order);

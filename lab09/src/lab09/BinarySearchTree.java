@@ -38,19 +38,14 @@ public class BinarySearchTree<T> {
      * @param element the element to insert into this BST
      */
     public void insert(T element) {
-    		if(data == null) {
-    			data = element;
-    			return;
-    		}
-    		else if(comparator.compare(element, data) > 0) {
-    			BinarySearchTree<T> node = new BinarySearchTree<T>(element, comparator);
-    			right = node;
-        }
-        else {
-        		BinarySearchTree<T> node = new BinarySearchTree<T>(element, comparator);
-        		left = node;
-        }
-    }
+    		if(data == null) data = element;
+    		else if(comparator.compare(data, element) > 0)
+    			if(right == null) right = new BinarySearchTree<T>(element, comparator);
+    			else right.insert(element);
+        else if(comparator.compare(data, element) < 0)
+        		if(left == null) left = new BinarySearchTree<T>(element, comparator);
+        		else left.insert(element);
+       }
 
     /**
      * Searchs for a given element in this BST
@@ -59,14 +54,16 @@ public class BinarySearchTree<T> {
      *         otherwise null if the given element is not in this BST
      */
     public T find(T element) {
-    		if(data.equals(element)) {
-    			return data;
-    		}
-    		else if(comparator.compare(element, data) > 0) {
-    			if(right == null)
+    		if(data.equals(element)) return data;
+    		else if(comparator.compare(data, element) > 0) {
+    			if(right == null) return null;
         		return right.find(element);
-        }
-    		else return left.find(element);
+    		}
+    		else if(comparator.compare(data, element) < 0) {
+    			if(left == null) return null;
+    			return left.find(element);
+    		}
+    		return element;
     }
 
     /**
@@ -75,9 +72,9 @@ public class BinarySearchTree<T> {
      */
     public List<T> getElements() {
         List<T> list = new ArrayList<>();
-        if(left != null) list.addAll(left.getElements());
-        list.add(data);
         if(right != null) list.addAll(right.getElements());
+        list.add(data);
+        if(left != null) list.addAll(left.getElements());
         return list;
     }
 

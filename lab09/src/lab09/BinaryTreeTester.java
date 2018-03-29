@@ -64,7 +64,6 @@ public class BinaryTreeTester {
     @Test
     public void elemsInCorrectOrder() {
         List<Integer> elems = ints.getElements();
-        System.out.println(elems);
         for (int i = 1; i < elems.size(); i++) {
             assertTrue(elems.get(i-1) < elems.get(i));
         }

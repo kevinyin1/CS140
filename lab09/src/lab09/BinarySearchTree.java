@@ -39,13 +39,13 @@ public class BinarySearchTree<T> {
      */
     public void insert(T element) {
     		if(data == null) data = element;
-    		else if(comparator.compare(data, element) > 0)
+    		else if(comparator.compare(data, element) < 0)
     			if(right == null) right = new BinarySearchTree<T>(element, comparator);
     			else right.insert(element);
-        else if(comparator.compare(data, element) < 0)
+        else if(comparator.compare(data, element) > 0)
         		if(left == null) left = new BinarySearchTree<T>(element, comparator);
         		else left.insert(element);
-       }
+     }
 
     /**
      * Searchs for a given element in this BST
@@ -55,11 +55,11 @@ public class BinarySearchTree<T> {
      */
     public T find(T element) {
     		if(data.equals(element)) return data;
-    		else if(comparator.compare(data, element) > 0) {
+    		else if(comparator.compare(data, element) < 0) {
     			if(right == null) return null;
         		return right.find(element);
     		}
-    		else if(comparator.compare(data, element) < 0) {
+    		else if(comparator.compare(data, element) > 0) {
     			if(left == null) return null;
     			return left.find(element);
     		}
@@ -72,9 +72,9 @@ public class BinarySearchTree<T> {
      */
     public List<T> getElements() {
         List<T> list = new ArrayList<>();
-        if(right != null) list.addAll(right.getElements());
-        list.add(data);
         if(left != null) list.addAll(left.getElements());
+        list.add(data);
+        if(right != null) list.addAll(right.getElements());
         return list;
     }
 

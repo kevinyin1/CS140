@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class Bonus {
 
 	public static void main(String[] args) {
-		Comparator<String> Stringcomp = (s1, s2) -> (s1.length() - s2.length());
+		Comparator<String> Stringcomp = (s1, s2) -> (s2.length() - s1.length());
 		BinarySearchTree<String> tree = new BinarySearchTree<String>(Stringcomp);
 		tree.insert("Shawn");
 		tree.insert("Bob");

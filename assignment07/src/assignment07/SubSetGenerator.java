@@ -7,26 +7,51 @@ public class SubSetGenerator {
 
 	public static void main(String[] args) {
 		List<String> list = new ArrayList<String>();
-		list = subSet("rum");
+		list = subSet("kevin");
 		System.out.println(list);
 	}
 	
 	public static List<String> subSet(String base) {
-		List<String> list = new ArrayList<String>();
-		return subSetHelper(base, base.length(), 0, list);
+		List<String> list = subSetHelper(base, base.length(), base.length(), new ArrayList<String>());
+		List<String> rlist = new ArrayList<String>();
+		int n = base.length(), pos = 0, index = 0;
+		String str;
+		//organize list by size
+		while(n >= 0) {
+			str = list.get(pos);
+			if(str.length() == n) rlist.add(str);
+			pos++;
+			if(pos == list.size()) {
+				n--;
+				pos = 0;
+			}
+		}
+		pos = 0;
+		//bring all the starting character of base to the front
+		while(pos < rlist.size()) {
+			str = rlist.get(pos);
+			if(str.startsWith(base.substring(0, 1))) {
+				rlist.remove(str);
+				rlist.add(index, str);
+				index++;
+			}
+			pos++;
+		}
+		System.out.println(list);
+		return rlist;
 	}
 	
-	public static List<String> subSetHelper(String base, int base_length, int index, List<String> list) {
-		if(base.length() == 0) {
-			list.add("");
-			return list;
+	public static List<String> subSetHelper(String base, int index, int delta, List<String> list) {
+		if(delta == -1) return list;
+		String str = base.substring(0, delta) + base.substring(index);
+		if(delta == 1) { // add all the individual characters in the string
+			String character = base.substring(delta, index);
+			if(!list.contains(character)) list.add(0, character); 
 		}
-		System.out.println(list + " " + base.substring(1,2));
-		list.add(base.substring(0, 1) + base.substring(index, index + 1));
-		if(index == base_length) {
-			return subSetHelper(base.substring(1), base_length - 1, 0, list);
-		}
-		return subSetHelper(base, base_length, index + 1, list);
+		if(!list.contains(str)) list.add(str);
+		if(index - delta == 0) return subSetHelper(base, base.length(), delta - 1, list);
+		return subSetHelper(base, index - 1, delta, list);
 	}
+	
 	
 }

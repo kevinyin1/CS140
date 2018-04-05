@@ -10,8 +10,10 @@ public class ArrayListPractice {
 		int count = 0;
 		Iterator<Integer> iter = arr.iterator();
 		while(iter.hasNext()) {
-			if((iter.next().equals(e))) iter.remove();
-			count++;
+			if((iter.next().equals(e))){
+				iter.remove();
+				count++;
+			}
 		}
 		return count;
 	}

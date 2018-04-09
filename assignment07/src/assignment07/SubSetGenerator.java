@@ -6,7 +6,7 @@ import java.util.List;
 public class SubSetGenerator {
 
 	public static void main(String[] args) {
-		System.out.println(subSet("app"));
+		//System.out.println(subSet("abcd"));
 	}
 	
 	public static List<String> subSet(String base) {
@@ -17,8 +17,8 @@ public class SubSetGenerator {
 	//                              String base = rum;
 	//                                      ""
 	//                                  /        \  
-	//          add "r"           "r"               ""
-	//                           /      \           /       \ 
+	//          add "r"           "r"                  ""
+	//                          /      \            /       \ 
 	//          add "u"     "ru"        "r"       "u"        ""
 	//                      /    \     /   \      /  \      /    \ 
 	//          add "m" "rum"   "ru" "rm"  "r"  "um"  "u" "m"     ""

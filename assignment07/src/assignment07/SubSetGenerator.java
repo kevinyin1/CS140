@@ -18,10 +18,10 @@ public class SubSetGenerator {
 	//                                      ""
 	//                                  /        \  
 	//          add "r"           "r"               ""
-	//                           /   \           /       \ 
-	//          add "u"       "ru"    "r"       "u"        ""
-	//                        /   \     \       /  \      /    \ 
-	//          add "m"    "rum"  "ru"  "rm"  "um"  "u" "m"     ""
+	//                           /      \           /       \ 
+	//          add "u"     "ru"        "r"       "u"        ""
+	//                      /    \     /   \      /  \      /    \ 
+	//          add "m" "rum"   "ru" "rm"  "r"  "um"  "u" "m"     ""
 	//
 	public static List<String> subSetHelper(String base, List<String> list) {
 		if(base.length() == 0) return list;

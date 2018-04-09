@@ -14,12 +14,12 @@ public class SubSetGenerator {
 		list.add(""); // default value
 		return subSetHelper(base, list);
 	}
-	// String base = rum;
-	//									   ""
-	//								   /        \  
-	//			add "r"			  "r"	            ""
-	//							 /   \	         /       \	
-	//			add "u"		  "ru"    "r"       "u"       ""
+	//                              String base = rum;
+	//                                      ""
+	//                                  /        \  
+	//          add "r"           "r"               ""
+	//                           /   \           /       \ 
+	//          add "u"       "ru"    "r"       "u"        ""
 	//                        /   \     \       /  \      /    \ 
 	//          add "m"    "rum"  "ru"  "rm"  "um"  "u" "m"     ""
 	//

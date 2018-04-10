@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class SubListGenerator {
 
 	public static void main(String[] args) {
-		//System.out.println(subLists(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4))));
+		System.out.println(subLists(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4))));
 	}
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> subLists(ArrayList<T> list) {
@@ -16,6 +16,7 @@ public class SubListGenerator {
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> subListsHelper(ArrayList<T> list) {
 		ArrayList<ArrayList<ArrayList<T>>> return_list = new ArrayList<ArrayList<ArrayList<T>>>(), empty = new ArrayList<ArrayList<ArrayList<T>>>();
+		if(list.size() == 0) return return_list;
 		if(list.size() == 1) {
 			ArrayList<T> core = new ArrayList<T>();
 			ArrayList<ArrayList<T>> sub_core = new ArrayList<ArrayList<T>>();

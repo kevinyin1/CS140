@@ -6,7 +6,7 @@ import java.util.List;
 public class SubSetGenerator {
 
 	public static void main(String[] args) {
-		//System.out.println(subSet("abcd"));
+		System.out.println(subSet("app"));
 	}
 	
 	public static List<String> subSet(String base) {

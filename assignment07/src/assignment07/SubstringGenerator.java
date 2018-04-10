@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class SubstringGenerator {
 
 	public static void main(String[] args) {
-//		System.out.println(subStrings("rum"));
-//		System.out.println(subStrings1("rum"));
+		System.out.println(subStrings("rum"));
+		System.out.println(subStrings1("rum"));
 	}
 	
 	public static Set<String> subStrings(String base) {

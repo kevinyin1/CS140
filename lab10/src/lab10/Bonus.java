@@ -34,9 +34,10 @@ public class Bonus {
 		}
 		
 		public static void printYoungestEmployee() {
-			departments.stream().forEach(e -> e.getEmployees().stream()
-			.reduce((a, b) -> (a.getAge() < b.getAge()) ? a : b)
-			.ifPresent(System.out::println));
+			departments.stream().peek(e -> System.out.println(e.getDepartmentName() + ": " + e.getEmployees()))
+				.flatMap(e -> e.getEmployees().stream())
+				.reduce((a, b) -> (a.getAge() < b.getAge()) ? a : b)
+				.ifPresent(s -> System.out.println("youngest: " + s));
 		}
 		
 		public static void main(String[] args) {

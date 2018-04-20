@@ -7,9 +7,8 @@ public class Question3_Typo {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.addAll(Arrays.asList(1, 7, 2, 9, 11, 12));
-		System.out.println(windowSubLists(list) + "\n" + 
-"[[[1], [7], [2], [9], [11]], [[1, 7], [2], [9], [11]], [[1, 7, 2], [9], [11]],[[1, 7, 2, 9], [11]], [[1, 7, 2, 9, 11]], [[1], [7, 2], [9], [11]], [[1], [7, 2, 9], [11]],[[1], [7, 2, 9, 11]], [[1], [7], [2, 9], [11]], [[1], [7], [2, 9, 11]], [[1], [7], [2], [9, 11]]");
+		list.addAll(Arrays.asList(1, 7, 2, 9, 11));
+		System.out.println(windowSubLists(list));
 	}
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> windowSubLists(ArrayList<T> list) {

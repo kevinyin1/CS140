@@ -3,12 +3,13 @@ package assignment08;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SubElasticSlidingWindowGenerator {
+public class Question3_Typo {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.addAll(Arrays.asList(1, 2, 3, 4, 5, 6));
-		System.out.println(windowSubLists(list));
+		list.addAll(Arrays.asList(1, 7, 2, 9, 11, 12));
+		System.out.println(windowSubLists(list) + "\n" + 
+"[[[1], [7], [2], [9], [11]], [[1, 7], [2], [9], [11]], [[1, 7, 2], [9], [11]],[[1, 7, 2, 9], [11]], [[1, 7, 2, 9, 11]], [[1], [7, 2], [9], [11]], [[1], [7, 2, 9], [11]],[[1], [7, 2, 9, 11]], [[1], [7], [2, 9], [11]], [[1], [7], [2, 9, 11]], [[1], [7], [2], [9, 11]]");
 	}
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> windowSubLists(ArrayList<T> list) {

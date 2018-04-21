@@ -2,7 +2,9 @@ package assignment08;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Tester {
@@ -36,11 +38,34 @@ public class Tester {
 		MATH.addStudent(s9);
 		MATH.setMajor();
 		
+		//Students with undecided majors
+		Student s10 = new Student("Steve Jobs", 35);
+		Student s11 = new Student("Alexander Borne", 67);
+		Student s12 = new Student("Milly White", 111);
+		
+		
 		System.out.println(getSortedList(new ArrayList<Major>(Arrays.asList(CS, EE, MATH))));
+		System.out.println(organize(new ArrayList<Student>(Arrays.asList(s1, s2, s3, s4, s5, s6,
+				 s7, s8, s9, s10, s11, s12))));
 	}
 	
 	public static List<Student> getSortedList(List<Major> lst) {
 		return lst.stream().flatMap(e -> e.getStudentsInMajor().stream()).sorted(Student.byCredits).collect(Collectors.toList());
+	}
+	
+	public static Map<String, List<Student>> organize(List<Student> list) {
+		if(list == null) throw new IllegalArgumentException("list cannot be null");
+		Map<String, List<Student>> map = new HashMap<String, List<Student>>();
+		for(Student s: list) {
+			if(s != null) {
+				if(!map.containsKey(s.getMajor())) {
+					map.put(s.getMajor(), new ArrayList<Student>(Arrays.asList(s)));
+				} else {
+					map.get(s.getMajor()).add(s);
+				}
+			}
+		}
+		return map;
 	}
 	
 }

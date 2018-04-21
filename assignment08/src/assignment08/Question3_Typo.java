@@ -5,11 +5,11 @@ import java.util.Arrays;
 
 public class Question3_Typo {
 
-	public static void main(String[] args) {
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.addAll(Arrays.asList(1, 7, 2, 9, 11));
-		System.out.println(windowSubLists(list));
-	}
+//	public static void main(String[] args) {
+//		ArrayList<Integer> list = new ArrayList<Integer>();
+//		list.addAll(Arrays.asList(1, 7, 2, 9, 11, 12, 14, 16, 13, 15, 19, 10, 29));
+//		System.out.println(windowSubLists(list));
+//	}
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> windowSubLists(ArrayList<T> list) {
 		return windowSubListsHelper(list, new ArrayList<ArrayList<ArrayList<T>>>(), 0, 1);

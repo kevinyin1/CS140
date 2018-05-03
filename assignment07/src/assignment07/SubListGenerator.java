@@ -5,9 +5,9 @@ import java.util.Arrays;
 
 public class SubListGenerator {
 
-	public static void main(String[] args) {
-		System.out.println(subLists(new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4))));
-	}
+//	public static void main(String[] args) {
+//		System.out.println(subLists(new ArrayList<Integer>(Arrays.asList(1, 7, 2, 9, 11))));
+//	}
 	
 	public static <T> ArrayList<ArrayList<ArrayList<T>>> subLists(ArrayList<T> list) {
 		ArrayList<T> clone = (ArrayList<T>)list.clone();
